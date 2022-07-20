@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1> Busqueda de Persona por Nombre</h1>
+
+    {% if busqueda_formulario %}
+
+        <form action="" method="GET">
+            {{busqueda_formulario}}
+            <button type="submit"> Buscar </button>
+
+        </form>
+    {% else %}
+        <ul>
+        {% if persona %}
+            {% for persona in personas %}
+                <li>{{persona.nombre}}</li>
+            {% endfor %}
+
+        {% else %}
+            <h1> No hay personas con ese nombre </h1>
+
+        {% endif %}
+        </ul>
+    {% endif %}
+
+    
+</body>
+</html>

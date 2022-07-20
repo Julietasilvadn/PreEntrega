@@ -13,3 +13,6 @@ class SpaAnimalFormulario(forms.Form):
     nombre = forms.CharField()
     reserva = forms.DateField()
     pago = forms.BooleanField()
+
+class PersonaBusqueda(forms.Form):
+    criterio = forms.CharField()
