@@ -35,16 +35,16 @@ def formulario_busqueda_persona(request):
 
 class MascotaCreateView(CreateView):
     model = Mascota
-    template_name = "pantallas/mascota.html"
+    template_name = "pantallas/mascota_formulario.html"
     fields = "__all__"   
 
     def get_success_url(self) -> str:
-         return reverse_lazy('pantallas:inicio')
+         return reverse_lazy('pantallas:base')
 
 class PersonaCreateView(CreateView):
     model = Persona
-    template_name = "pantallas/persona.html"
+    template_name = "pantallas/persona_formulario.html"
     fields = "__all__"   
 
     def get_success_url(self) -> str:
-         return reverse_lazy('pantallas:inicio')
+         return reverse_lazy('pantallas:base')
