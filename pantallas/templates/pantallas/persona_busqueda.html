@@ -11,8 +11,9 @@
 
         </form>
     {% else %}
+
         <ul>
-        {% if persona %}
+        {% if personas %}
             {% for persona in personas %}
                 <li>{{persona.nombre}}</li>
             {% endfor %}

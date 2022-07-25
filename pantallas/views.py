@@ -17,18 +17,11 @@ def mostrar_inicio(request):
 def mostrar_reserva(request):
     return render(request, "pantallas/reserva.html", {})
 
-def persona_formulario(request):
-    if request.method == "POST":
-        pass
-    else:
-        miFormulario = PersonaFormulario()
-        return render(request, "pantallas/persona_formulario.html",{"miFormulario":miFormulario})
-
 def formulario_busqueda_persona(request):
     busqueda_formulario = PersonaBusqueda()
 
     if request.GET:
-        personas = Persona.objects.filter(nombre= busqueda_formulario['criterio']).all()
+        personas = Persona.objects.filter(nombre= busqueda_formulario).all()
         return render(request, "pantallas/persona_busqueda.html", {"personas": personas})
 
     return render(request, "pantallas/persona_busqueda.html",{"busqueda_formulario":busqueda_formulario})
@@ -56,3 +49,4 @@ class ReservaCreateView(CreateView):
 
     def get_success_url(self) -> str:
          return reverse_lazy('pantallas:inicio')
+
