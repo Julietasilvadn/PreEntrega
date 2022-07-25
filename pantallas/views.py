@@ -1,7 +1,11 @@
+from urllib import request
+from urllib.request import Request
 from django.shortcuts import render
 from pantallas.models import Persona, Mascota, SpaAnimal
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from pantallas.forms import (PersonaFormulario, MascotaFormulario, 
 SpaAnimalFormulario, PersonaBusqueda)
+from django.urls import reverse, reverse_lazy
 
 def mostrar_inicio(request):
     return render(request, "pantallas/inicio.html", {})
@@ -27,3 +31,20 @@ def formulario_busqueda_persona(request):
         return render(request, "pantallas/personabusqueda.html", {"personas": personas})
 
     return render(request, "pantallas/personabusqueda.html",{"busqueda_formulario":busqueda_formulario})
+
+
+class MascotaCreateView(CreateView):
+    model = Mascota
+    template_name = "pantallas/mascota.html"
+    fields = "__all__"   
+
+    def get_success_url(self) -> str:
+         return reverse_lazy('pantallas:inicio')
+
+class PersonaCreateView(CreateView):
+    model = Persona
+    template_name = "pantallas/persona.html"
+    fields = "__all__"   
+
+    def get_success_url(self) -> str:
+         return reverse_lazy('pantallas:inicio')
