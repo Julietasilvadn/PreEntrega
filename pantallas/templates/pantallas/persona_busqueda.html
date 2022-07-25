@@ -6,15 +6,15 @@
     {% if busqueda_formulario %}
 
         <form action="" method="GET">
-            {{busqueda_formulario}}
+           <p style="color: black"> {{busqueda_formulario}} </style>
             <button style="color: blue" type="submit"> Buscar </button>
 
         </form>
     {% else %}
 
         <ul>
-        {% if personas %}
-            {% for persona in personas %}
+        {% if persona %}
+            {% for persona in persona %}
                 <li>{{persona.nombre}}</li>
             {% endfor %}
 

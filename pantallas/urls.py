@@ -9,5 +9,6 @@ pantallas_patterns =( [
     path('create/', MascotaCreateView.as_view(), name='create'),
     path('create/person/', PersonaCreateView.as_view(), name='crear_persona'), 
     path('create/reserva/', ReservaCreateView.as_view(), name='crear_reserva'),
+    
       
 ],'pantallas' )
