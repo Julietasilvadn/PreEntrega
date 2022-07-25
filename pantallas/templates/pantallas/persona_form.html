@@ -1,9 +1,6 @@
-{% extends "pantallas/base.html" %}
-
+{% extends 'pantallas/base.html' %}
 {% load static %}
-
 {% block cuerpo %}
-
 <main role="main">
   <div class="container">
     <div class="row mt-3">
@@ -14,12 +11,11 @@
                     {{ form.as_table }}
                 </table>
                 <br>
-                <input type="submit" value="Crear página" />
+                <input style="color: blue;" type="submit" value="Crear Persona" />
             </form>
         </div>
       </div>
     </div>
   </div>
 </main>
-
 {% endblock %}

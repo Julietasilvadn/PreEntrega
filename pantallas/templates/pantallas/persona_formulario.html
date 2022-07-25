@@ -1,25 +1,8 @@
-{% extends 'pantallas/base.html' %}
-
-{% load static %}
-
-{% block cuerpo %}
-
-<main role="main">
-  <div class="container">
-    <div class="row mt-3">
-      <div class="col-md-9 mx-auto">
-        <div>
-            <form action="" method="post">{% csrf_token %}
-                <table style="color: black; " >
-                    {{ form.as_table }}
-                </table>
-                <br>
-                <input type="submit" value="Crear página" />
-            </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</main>
-
-{% endblock %}
+<form action="" method="POST">
+    {% csrf_token %}
+    
+    {{miFormulario}}
+    
+    <button type="submit"> Enviar </button>
+    
+    </form>
